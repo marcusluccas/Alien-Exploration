@@ -12,4 +12,4 @@
 
     1.5 Fazer o player andar - Feito
 
-    1.6 Fazer o player inverter a imagem - 
+    1.6 Fazer o player inverter a imagem - Feito
