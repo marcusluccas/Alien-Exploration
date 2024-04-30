@@ -19,3 +19,5 @@
     1.8 Fazer o player pular - Feito
 
     1.9 Limitando os pulos do player - Feito
+
+    1.10 Fazer a animação do player pulando - Feito

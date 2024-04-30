@@ -42,7 +42,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && amountJumps > 0f)
         {
             myRB.velocity = new Vector2(myRB.velocity.x, speed);
+            myAnimator.SetBool("InFloor", false);
             amountJumps--;
+        }
+
+        if (myRB.velocity.y != 0f)
+        {
+            myAnimator.SetFloat("VSpeed", Mathf.Sign(myRB.velocity.y));
         }
     }
 
@@ -51,6 +57,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             amountJumps = maxJumps;
+            myAnimator.SetBool("InFloor", true);
         }
     }
 }
