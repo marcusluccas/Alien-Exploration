@@ -43,6 +43,10 @@ public class PlayerController : MonoBehaviour
         {
             myRB.velocity = new Vector2(myRB.velocity.x, speed);
             myAnimator.SetBool("InFloor", false);
+            if (amountJumps == maxJumps -1)
+            {
+                myAnimator.SetBool("DoubleJump", true);
+            }
             amountJumps--;
         }
 
@@ -50,6 +54,11 @@ public class PlayerController : MonoBehaviour
         {
             myAnimator.SetFloat("VSpeed", Mathf.Sign(myRB.velocity.y));
         }
+    }
+
+    private void EndAnimation(string parameter)
+    {
+        myAnimator.SetBool(parameter, false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

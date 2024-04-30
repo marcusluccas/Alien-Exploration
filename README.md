@@ -21,3 +21,5 @@
     1.9 Limitando os pulos do player - Feito
 
     1.10 Fazer a animação do player pulando - Feito
+
+    1.11 Fazer a animação de pulo duplo - Feito
