@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnimator;
     private int maxJumps = 2;
     private int amountJumps;
+    [SerializeField] private LayerMask myLayerCol;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,18 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
+    }
+
+    private void FixedUpdate()
+    {
+        myAnimator.SetBool("InFloor", RayCast());
+
+        Debug.Log(myRB.velocity.y);
+
+        if (RayCast() && myRB.velocity.y <= 0)
+        {
+            amountJumps = maxJumps;
+        }
     }
 
     private void Move()
@@ -63,10 +76,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            amountJumps = maxJumps;
-            myAnimator.SetBool("InFloor", true);
-        }
+    }
+
+    private bool RayCast()
+    {
+        BoxCollider2D myBoxCollider = GetComponent<BoxCollider2D>();
+        bool rayCast = Physics2D.Raycast(myBoxCollider.bounds.center, Vector2.down, 0.4f, myLayerCol);
+
+        Debug.DrawRay(myBoxCollider.bounds.center, Vector2.down * 0.4f);
+
+        return rayCast;
     }
 }

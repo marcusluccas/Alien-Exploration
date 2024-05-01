@@ -23,3 +23,13 @@
     1.10 Fazer a animação do player pulando - Feito
 
     1.11 Fazer a animação de pulo duplo - Feito
+
+    1.12 Fazer um raycast com o level - Feito
+
+2. Fazer o level - Feito
+
+    2.1 Fazer um tilemap - Feito
+
+    2.2 Usar um collider - Feito
+
+    2.3 Usar uma layer - Feito
