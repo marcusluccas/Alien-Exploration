@@ -33,3 +33,5 @@
     2.2 Usar um collider - Feito
 
     2.3 Usar uma layer - Feito
+
+3. Fazer o background - Feito
