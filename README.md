@@ -26,6 +26,10 @@
 
     1.12 Fazer um raycast com o level - Feito
 
+    1.13 Fazer o wall jump - Feito
+
+    1.14 Fazer a animação de wall jump - Feito
+
 2. Fazer o level - Feito
 
     2.1 Fazer um tilemap - Feito
